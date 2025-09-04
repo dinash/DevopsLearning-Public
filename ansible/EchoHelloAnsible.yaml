@@ -1,0 +1,7 @@
+---
+- name : This is a simple ansible that will use debug module to print HelloWorld as debug message
+  hosts: localhost
+  tasks:
+    - name : This is my first task to print HelloWorld
+      debug:
+        msg: "HelloWorld"

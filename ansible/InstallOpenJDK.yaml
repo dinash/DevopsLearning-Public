@@ -1,0 +1,9 @@
+---
+- name: "Ansible to Install Open JDK"
+  become: yes
+  hosts: localhost
+  tasks:
+    - name: "Name Install open jdk using apt"
+      apt:
+        name: openjdk-17-jdk
+        state: present

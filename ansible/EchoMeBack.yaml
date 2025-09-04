@@ -1,0 +1,7 @@
+---
+- name: "This is a simple ansible that will echo what ever that is sent as input argument"
+  hosts: localhost
+  tasks:
+    - name: "Task that will echo the given argument"
+      debug:
+        msg: "You passed a argument EchoText with value of {{ EchoText }}"

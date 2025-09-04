@@ -1,0 +1,4 @@
+- name: "Name Install open jdk using apt"
+  apt:
+    name: openjdk-17-jdk
+    state: present

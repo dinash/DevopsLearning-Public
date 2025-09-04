@@ -1,0 +1,4 @@
+- name: "Name Install apache2 using apt"
+  apt:
+    name: apache2
+    state: present

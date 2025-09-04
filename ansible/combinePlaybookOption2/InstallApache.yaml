@@ -1,0 +1,13 @@
+---
+- name: "Ansible to install apache2 server on the host"
+  become: yes
+  hosts: localhost
+  tasks:
+    - name: "Name Install apache2 using apt"
+      apt:
+        name: apache2
+        state: present
+    - name: "Start the service"
+      service:
+        name: apache2
+        state: started

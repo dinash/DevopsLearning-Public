@@ -1,0 +1,5 @@
+---
+- name: "Play book that will import entirly other play books and execute all its inner tasks"
+  hosts: localhost
+- import_playbook: InstallOpenJDK.yaml
+- import_playbook: InstallApache.yaml

@@ -1,0 +1,9 @@
+---
+- name: "Ansible to Uninstall Open JDK"
+  become: yes
+  hosts: localhost
+  tasks:
+    - name: "Name Uninstall open jdk using apt"
+      apt:
+        name: openjdk-17-jdk
+        state: absent

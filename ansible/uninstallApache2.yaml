@@ -1,0 +1,23 @@
+---
+- name: "Ansible to uninstall apache2 server on the host"
+  become: yes
+  hosts: localhost
+  vars:
+    apache_package: "apache2"
+    justStopOrUnInstall: "{{ todo}}"
+  tasks:
+    - name: "Collect all packages installed"
+      package_facts:
+        manager: auto
+    - name: "stop the server if already exists"
+      service:
+        name: "{{ apache_package }}"
+        state: stopped
+      when: 
+        - "{{ apache_package in ansible_facts.packages }}"
+        - justStopOrUnInstall == "STOP-ONLY"
+    - name: "Name uninstall apache2 using apt"
+      apt:
+        name: "{{ apache_package }}"
+        state: absent
+      when: justStopOrUnInstall == "ALL"

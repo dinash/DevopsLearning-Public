@@ -1,0 +1,13 @@
+---
+- name: "Playbook that will install java and apache server which are defined as separate tasks"
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: "Adding task of java installation"
+      include_tasks: 
+        file: "tasks/InstallOpenJdkTask.yaml"
+    - name : "Adding task for apache installation"
+      include_tasks: 
+        file: "tasks/InstallApacheTask.yaml"
+
+

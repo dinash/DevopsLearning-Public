@@ -1,0 +1,10 @@
+---
+- name: "Ansible to demo multiple tasks"
+  hosts: localhost
+  tasks:
+    - name : First Task
+      debug:
+        msg: "Execute first task"
+    - name : Second Task
+      debug:
+        msg: "Second task execution"

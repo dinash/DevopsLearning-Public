@@ -1,0 +1,15 @@
+---
+- name: "Ansible to demo multiple tasks"
+  hosts: localhost
+  vars:
+    taskName: "{{ argTaskIndex }}"
+  tasks:
+    - name : "Task at index 0"
+      when: taskName | int == 0
+      debug:
+        msg: "Task at index 0 is executed"
+
+    - name : "Task at index 1"
+      when: taskName | int == 1
+      debug:
+        msg: "Task at index 1 is executed"

@@ -1,0 +1,8 @@
+---
+- name: "Running the ansible playbook using roles"
+  become: yes
+  hosts: localhost
+  roles:
+    - maven
+    - geerlingguy.mysql # ansible-galaxy role install geerlingguy.mysql
+    - apache2
